@@ -3,6 +3,18 @@
 Syfte: En enkel steg-för-steg guide för hur vi gör en ändring och får in den i `main` via Pull Request.
 Vi jobbar ALDRIG direkt på `main`.
 
+```
+Regel:
+
+Ändringar syns först i PR när de är:
+
+staged (git add ...)
+
+committed (git commit ...)
+
+pushed (git push)
+```
+
 ---
 
 ## Förutsättningar (innan du börjar)
