@@ -1,0 +1,107 @@
+# 1) Secrets / env (NEVER COMMIT)
+.env
+.env.*
+!.env.example
+
+
+# 2) Local data (policy: no raw/PII in git)
+data/raw/
+data/private/
+data/clean/
+data/exports/
+data/tmp/
+data/cache/
+
+# Allow small, anonymized samples
+!data/samples/
+!data/samples/**
+
+# If someone accidentally creates these anywhere:
+**/*_raw.*
+**/*raw_export.*
+**/*forms_export.*
+**/*survey_export.*
+**/*interview_notes.*
+**/*pii.*
+
+# Common data files (generally ignore; only commit samples)
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.json
+*.jsonl
+*.parquet
+*.feather
+*.avro
+
+# Allow mapping files in sql/mappings (small, versioned)
+!sql/mappings/**/*.csv
+!sql/mappings/**/*.tsv
+!sql/mappings/**/*.json
+!sql/mappings/**/*.jsonl
+
+
+# 3) Databases / volumes
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+pgdata/
+postgres-data/
+docker-data/
+*.dump
+*.backup
+
+# 4) Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+
+# 5) Notebooks
+.ipynb_checkpoints/
+
+
+# 6) Logs
+*.log
+logs/
+*.tmp
+
+
+# 7) OS / Editor
+.DS_Store
+Thumbs.db
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.swp
+
+
+# 8) Power BI / BI artifacts
+# Prefer storing .pbix outside git (binary & can be big)
+*.pbix
+*.pbit
+
+# 9) Mermaid/diagram build outputs (optional)
+# If you export images locally, keep sources in docs/diagrams
+docs/diagrams/**/export/
